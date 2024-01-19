@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration Form</title>
+    <!-- Add your CSS styling here (if any) -->
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+       body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    background-image: url(https://images.squarespace-cdn.com/content/v1/57713a8e2994cae381dd86fe/1546428275715-K54L4KGXTZC0S4RCMLYT/216e7744-4744-4ac7-bd42-5e23bdf8cae5.jpg?format=2500w); 
+}
+
+h2 {
+    text-align: center;
+    color: white;
+}
+
+form {
+    max-width: 600px;
+    margin: 20px auto;
+   background: linear-gradient(
+    to bottom,
+    #ded3ff,
+    #8a44ff
+  );
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="checkbox"], input[type="radio"] {
+    margin-right: 5px;
+}
+
+button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+textarea {
+    resize: vertical;
+}
+    </style>
+</head>
+<body>
+
+    <h2>REGISTRATION FORM</h2>
+
+    <form action="process_registration.php" method="post">
+        <!-- Personal Information -->
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required>
+
+        
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="email">Password:</label>
+        <input type="password" id="password"  name="password" pattern= "(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+    
+
+        <!-- Year of Study -->
+        <label for="yearOfStudy">Year of Study:</label>
+        <select id="yearOfStudy" name="yearOfStudy" required>
+            <option value="freshman">Freshman</option>
+            <option value="sophomore">Sophomore</option>
+            <option value="junior">Junior</option>
+            <option value="senior">Senior</option>
+            <option value="gradStudent">Grad Student</option>
+        </select>
+
+        <label for="major">Major/Department:</label>
+        <input type="text" id="major" name="major" required>
+
+        <!-- Club/Organization Membership -->
+        <label>Are you a member of any club/organization related to this event?</label>
+        <input type="radio" id="memberYes" name="clubMembership" value="yes"> Yes
+        <input type="radio" id="memberNo" name="clubMembership" value="no" checked> No
+
+        <label for="clubName">If yes, please specify:</label>
+        <input type="text" id="clubName" name="clubName">
+
+        <!-- How did you hear about the event? -->
+        <label for="howHeard">How did you hear about this event?</label>
+        <select id="howHeard" name="howHeard" required>
+            <option value="socialMedia">Social Media</option>
+            <option value="flyers">Flyers/Posters</option>
+            <option value="wordOfMouth">Word of Mouth</option>
+            <option value="collegeWebsite">College Website</option>
+            <option value="other">Other</option>
+        </select>
+        <!-- Dietary Preferences -->
+        <label>Do you have any dietary restrictions or preferences?</label>
+        <input type="checkbox" id="vegetarian" name="dietaryPreference[]" value="vegetarian"> Vegetarian
+        <input type="checkbox" id="vegan" name="dietaryPreference[]" value="vegan"> Vegan
+        <input type="checkbox" id="glutenFree" name="dietaryPreference[]" value="glutenFree"> Gluten-Free
+        <input type="checkbox" id="otherDietary" name="dietaryPreference[]" value="other"> Other
+        <input type="text" id="otherDietaryDetails" name="otherDietaryDetails" placeholder="Specify if 'Other' selected">
+
+        <!-- Special Accommodations -->
+        <label>Do you require any special accommodations?</label>
+        <input type="radio" id="accommodationsYes" name="specialAccommodations" value="yes"> Yes
+        <input type="radio" id="accommodationsNo" name="specialAccommodations" value="no" checked> No
+
+        <label for="accommodationsDetails">If yes, please specify:</label>
+        <input type="text" id="accommodationsDetails" name="accommodationsDetails">
+
+        <!-- Emergency Contact -->
+        <label for="emergencyContact">Emergency Contact:</label>
+        <input type="text" id="emergencyContact" name="emergencyContact" required>
+
+        <label for="relationship">Relationship:</label>
+        <input type="text" id="relationship" name="relationship" required>
+
+        <label for="emergencyPhone">Phone Number:</label>
+        <input type="tel" id="emergencyPhone" name="emergencyPhone" required>
+
+        <!-- Additional Comments -->
+        <label for="comments">Any additional comments or questions?</label>
+        <textarea id="comments" name="comments" rows="4"></textarea>
+
+        <!-- Declaration and Submit Button -->
+        <label for="declaration">I hereby confirm that the information provided above is accurate, and I agree to comply with the rules and regulations of the event.</label>
+        <input type="checkbox" id="declaration" name="declaration" required>
+
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>

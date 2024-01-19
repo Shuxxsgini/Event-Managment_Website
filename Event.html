@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Calendar</title>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".box").click(function(){
+                var currentWidth = $(this).width();
+
+                if (currentWidth === 200) {
+                    $(this).animate({
+                        width: '300px',
+                        height: '300px'
+                    }, 500);
+                } else {
+                    $(this).animate({
+            
+                        width: '200px',
+                        height: '200px'
+                    }, 500); 
+                }
+            });
+        });
+    </script>
+    <style>
+        body {
+            background-image: url('https://images.pexels.com/photos/2526105/pexels-photo-2526105.jpeg?cs=srgb&dl=pexels-designecologist-2526105.jpg&fm=jpg');
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #003b4d;
+            color: black;
+            text-align: center;
+            padding: 10px;
+            color: aliceblue;
+            font-family: 'Roboto';
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 16px;
+            padding: 16px;
+            justify-content: space-between;
+        }
+
+        .box {
+            background: linear-gradient(
+                 to bottom,
+                 #ded3ff,
+                 #8a44ff
+            );
+            width: 200px;
+            height: 200px;
+            border-radius:15px;
+            box-shadow: 0 4px 8px rgba(232, 99, 232, 0.901);
+            text-align: center;
+            transition:transform 0.3s ease-in-out;
+            font-size:'Times New Roman';
+            
+        }
+
+        .box:hover{
+            transform: scale(1.1);
+            background: linear-gradient(
+                 to bottom,
+                 #e3b7b4,
+                 #ec685a
+            );
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRidthmoKTH92DaOgahIS3Tw_tyopazicabnPM8E5moeceS2CHS8dqsBPJmpr5q0sgML5U&usqp=CAU);
+        }
+        p {
+            margin-top: 20px;
+            color: black;
+            font-weight: bold;
+        }
+       
+    </style>
+</head>
+<body>
+    <header>
+        <h1>EVENT CALENDAR</h1>
+    </header>
+    <div class="gallery">
+        <div class="box"><h2 class="bg-warning">January</h2><p>New years say celebration 01.01.24<br>Republic day celebration 26.01.24</p></div>
+        <div class="box"><h2 class="bg-warning">February</h2><p>Tech expo 2024<br>Spring Music festival</p></div>
+        <div class="box"><h2 class="bg-warning">March</h2><p>Startup Idea park 17th-14th</p></div>
+        <div class="box"><h2 class="bg-warning">April</h2><p>Earth day cleanup </p></div>
+        <div class="box"><h2 class="bg-warning">May</h2><p>none for now</p></div>
+        <div class="box"><h2 class="bg-warning">June</h2><p>Summer movie night at city plaza</p></div>
+        <div class="box"><h2 class="bg-warning">July</h2><p>Art and Music expo</p></div>
+        <div class="box"><h2 class="bg-warning">August</h2><p>Independence day fireworks<br> Waterfront park</p></div>
+        <div class="box"><h2 class="bg-warning">September</h2><p>Back-To-School fair</p></div>
+        <div class="box"><h2 class="bg-warning">October</h2><p>Harvest festival<br>Halloween costume party</p></div>
+        <div class="box"><h2 class="bg-warning">November</h2><p>Thanksgiving Community dinner</p></div>
+        <div class="box"><h2 class="bg-warning">December</h2><p>Winter Wonderland festival 15th onwards</p></div>
+    </div>
+</body>
+</html>
