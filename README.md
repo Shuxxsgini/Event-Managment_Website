@@ -1,1 +1,3 @@
 # Event-Managment_Website
+We made this project as a team....
+I handled the Home page , The Team Page and the Blog page
